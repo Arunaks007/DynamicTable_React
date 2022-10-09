@@ -16,7 +16,6 @@ export default function App() {
     for (let i = 0; i < value; i = i + 2) {
       // setting the increment by 2 so that once the first column filled it will go to the last row second colunm
       for (let j = 0; j < value; j++) {
-        // iterating through the row
         myArr[j][i] = ++temp;
         if (j === value - 1) {
           if (!(temp === value * value)) {
