@@ -44,6 +44,7 @@ export default function App() {
       <button onClick={handleSquare}>Submit</button>
       <div className="container">
         {box.map((row, index) => {
+          // iterating through the array and dynamically adding the div along with cell value
           return (
             <div key={index} id="row">
               {row.map((cell, index) => {
