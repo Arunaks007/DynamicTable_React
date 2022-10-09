@@ -6,7 +6,7 @@ export default function App() {
   const [box, setBox] = useState([]);
 
   function handleSquare() {
-    let temp = 1;
+    let temp = 0;
     const myArr = Array(value); // declaring an array with the size we got from the input
 
     for (let i = 0; i < value; i++) {
@@ -14,14 +14,15 @@ export default function App() {
     }
 
     for (let i = 0; i < value; i = i + 2) {
+      // setting the increment by 2 so that once the first column filled it will go to the last row second colunm
       for (let j = 0; j < value; j++) {
-        myArr[j][i] = temp++;
+        // iterating through the row
+        myArr[j][i] = ++temp;
         if (j === value - 1) {
-          if (temp === value * value + 1) {
-            break;
-          }
-          for (let v = j; v >= 0; v--) {
-            myArr[v][i + 1] = temp++;
+          if (!(temp === value * value)) {
+            for (let v = j; v >= 0; v--) {
+              myArr[v][i + 1] = ++temp;
+            }
           }
         }
       }
